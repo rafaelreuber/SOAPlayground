@@ -1,0 +1,29 @@
+<wsdl:definitions
+     name="DequeuePerson"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/aq/SOAPlayground/PersonAQ/DequeuePerson"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/aq/SOAPlayground/PersonAQ/DequeuePerson"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:pc="http://xmlns.oracle.com/pcbpel/"
+     xmlns:obj1="http://xmlns.oracle.com/xdb/SI"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="Dequeue_plt" >
+    <plt:role name="Dequeue_role" >
+      <plt:portType name="tns:Dequeue_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/xdb/SI" schemaLocation="../Schemas/SI_PERSON_TYPE.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="PERSON_TYPE_msg">
+        <wsdl:part name="PERSON_TYPE" element="obj1:PERSON_TYPE"/>
+    </wsdl:message>
+    <wsdl:portType name="Dequeue_ptt">
+        <wsdl:operation name="Dequeue">
+            <wsdl:input message="tns:PERSON_TYPE_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

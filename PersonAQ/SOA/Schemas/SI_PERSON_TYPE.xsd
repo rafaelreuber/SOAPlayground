@@ -1,0 +1,23 @@
+<schema targetNamespace="http://xmlns.oracle.com/xdb/SI" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SI="http://xmlns.oracle.com/xdb/SI" elementFormDefault="unqualified" attributeFormDefault="qualified">
+   <complexType name="PERSON_TYPE">
+      <sequence>
+         <element name="ID" type="double" nillable="true" minOccurs="0"/>
+         <element name="NAME" nillable="true" minOccurs="0">
+            <simpleType>
+               <restriction base="string">
+                  <maxLength value="30"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="TYPE" nillable="true" minOccurs="0">
+            <simpleType>
+               <restriction base="string">
+                  <maxLength value="30"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="BIRTHDAY" type="string" nillable="true" minOccurs="0"/>
+      </sequence>
+   </complexType>
+   <element name="PERSON_TYPE" type="SI:PERSON_TYPE" />
+</schema>

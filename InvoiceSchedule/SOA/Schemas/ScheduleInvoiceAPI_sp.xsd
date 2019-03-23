@@ -1,0 +1,13 @@
+<schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/ScheduleInvoiceAPI" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/sp/ScheduleInvoiceAPI" elementFormDefault="qualified">
+   <element name="InputParameters">
+      <!--Empty Parameter List-->
+      <complexType/>
+   </element>
+   <element name="OutputParameters">
+      <complexType>
+         <sequence>
+            <element name="SCHEDULE_PAYMENT" type="decimal" db:index="0" db:type="NUMBER" minOccurs="0" nillable="true"/>
+         </sequence>
+      </complexType>
+   </element>
+</schema>

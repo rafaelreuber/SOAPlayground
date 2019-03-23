@@ -1,0 +1,13 @@
+<adapter-config name="ScheduleInvoiceAPI" adapter="db" wsdlLocation="../WSDLs/ScheduleInvoiceAPI.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="si-local" location="eis/DB/si-local"/>
+  <endpoint-interaction portType="ScheduleInvoiceAPI_ptt" operation="ScheduleInvoiceAPI">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="SI"/>
+      <property name="PackageName" value="INVOICE_PKG"/>
+      <property name="ProcedureName" value="SCHEDULE_PAYMENT"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

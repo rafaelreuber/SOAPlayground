@@ -1,0 +1,57 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer
+
+  Created: Fri Mar 15 18:24:19 BRT 2019
+  Author:  reuber
+  Type: BPEL 2.0 Process
+  Purpose: Empty BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="PersonProcess"
+               targetNamespace="http://xmlns.oracle.com/SOAPlayground/PersonAQ/PersonProcess"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/SOAPlayground/PersonAQ/PersonProcess"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/aq/SOAPlayground/PersonAQ/DequeuePerson"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+         xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc"
+         xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+         xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20"
+         xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+         xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+         xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+         xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://xmlns.oracle.com/xdb/SI"
+         xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+
+  <!--
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC
+     Set of activities coordinating the flow of messages across the
+     services integrated within this business process
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <partnerLinks>
+    <partnerLink name="DequeuePerson" partnerLinkType="ns1:Dequeue_plt" myRole="Dequeue_role"/>
+  </partnerLinks>
+  <variables>
+    <variable name="Receive_Dequeue_Input" messageType="ns1:PERSON_TYPE_msg"/>
+    <variable name="title" type="xsd:string"/>
+  </variables>
+  <sequence name="main">
+    <receive name="Receive" createInstance="yes" partnerLink="DequeuePerson" portType="ns1:Dequeue_ptt"
+             operation="Dequeue" variable="Receive_Dequeue_Input"/>
+    <assign name="Assign">
+      <copy>
+        <from>oraext:setFlowInstanceTitle(string($Receive_Dequeue_Input.PERSON_TYPE/TYPE))</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$title</to>
+      </copy>
+    </assign>
+  </sequence>
+</process>

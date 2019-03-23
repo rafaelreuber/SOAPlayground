@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>error</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='forEach'][@name='ForEach']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='finalCounterValue']</loc>
+      <line>74</line>
+      <col/>
+      <file>BPEL/InvoiceScheduleParallelBPEL.bpel</file>
+      <name>BPEL/InvoiceScheduleParallelBPEL.bpel</name>
+      <fix>You must defined the variable to use it in the XPath expression.</fix>
+      <msg>The variable "ForEach1Counter" is not defined in scope or process.</msg>
+   </Fault>
+</Faults>

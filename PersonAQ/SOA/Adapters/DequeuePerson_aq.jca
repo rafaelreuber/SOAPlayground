@@ -1,0 +1,12 @@
+<adapter-config name="DequeuePerson" adapter="aq" wsdlLocation="../WSDLs/DequeuePerson.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="si-local" location="eis/AQ/si-local"/>
+  <endpoint-activation portType="Dequeue_ptt" operation="Dequeue">
+    <activation-spec className="oracle.tip.adapter.aq.inbound.AQDequeueActivationSpec">
+      <property name="QueueName" value="PERSON_AQ"/>
+      <property name="SchemaValidation" value="false"/>
+      <property name="DatabaseSchema" value="SI"/>
+    </activation-spec>
+  </endpoint-activation>
+
+</adapter-config>

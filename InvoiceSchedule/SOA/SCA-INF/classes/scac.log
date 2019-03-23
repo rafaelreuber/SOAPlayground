@@ -1,0 +1,21 @@
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+2019-03-23 10:14:53.840/1.558 Oracle Coherence 12.2.1.3.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/home/reuber/oracle12.2.1.3/middleware/oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2019-03-23 10:14:53.879/1.597 Oracle Coherence 12.2.1.3.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/home/reuber/oracle12.2.1.3/middleware/oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2019-03-23 10:14:53.880/1.598 Oracle Coherence 12.2.1.3.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2019-03-23 10:14:53.883/1.601 Oracle Coherence 12.2.1.3.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2019-03-23 10:14:53.885/1.603 Oracle Coherence 12.2.1.3.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2019-03-23 10:14:53.886/1.604 Oracle Coherence 12.2.1.3.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+
+Oracle Coherence Version 12.2.1.3.0 Build 68243
+ Grid Edition: Development mode
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+2019-03-23 10:14:54.164/1.882 Oracle Coherence GE 12.2.1.3.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.ExtensibleConfigurableCacheFactory
+2019-03-23 10:14:54.273/1.991 Oracle Coherence GE 12.2.1.3.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "reuber's cluster" has been automatically generated
+mar 23, 2019 10:14:54 AM oracle.dms.instrument.Noun findOrCreateByPath
+ADVERTÊNCIA: Tentativa de criar um nome /DMS-Internal preexistente, do tipo n/a, com um tipo de conflito n/d.
+mar 23, 2019 10:14:54 AM oracle.soa.scac.ValidateComposite loadWSDLs
+ADVERTÊNCIA: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
+mar 23, 2019 10:14:54 AM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+INFORMAÇÕES: XMLSchema incremental build enabled.
